@@ -38,6 +38,14 @@
     </div>
 
     <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition, showError);
+        } else {
+          alert("Geolocation is not supported by this browser.");
+        }
+      });
+
       function getLocation() {
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(showPosition, showError);
@@ -72,4 +80,4 @@
     </script>
   </body>
 </html>
-Add index.html with Google Maps integration
+
